@@ -19,6 +19,8 @@ public class MainActivity extends FragmentActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 		FragmentTabHost fth=(FragmentTabHost)findViewById(android.R.id.tabhost);
+		fth.setup(this,getSupportFragmentManager(),R.id.container);
+		
 		TabHost.TabSpec spec=fth.newTabSpec("players");
 		spec.setIndicator("Players");
 		fth.addTab(spec,BlankFragment.class,null);
